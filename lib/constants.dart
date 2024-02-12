@@ -5,4 +5,5 @@ const kprmaryDuration = Duration(milliseconds: 260);
 
 class Assets {
   static const logo = 'assets/images/logo-no-background.png';
+  static const test = 'assets/images/test.jpg';
 }
