@@ -1,9 +1,6 @@
-import 'package:bookly/constants.dart';
 import 'package:bookly/features/home/data/presentation/views/widgets/AppBar.dart';
-import 'package:bookly/features/home/data/presentation/views/widgets/list_view_item.dart';
+import 'package:bookly/features/home/data/presentation/views/widgets/list_view_bulider.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly/constants.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -11,7 +8,7 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [CustomAppBar(), ListViewItem()],
+      children: [CustomAppBar(), ListViewBuilderBooks()],
     );
   }
 }
