@@ -1,3 +1,4 @@
+import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../constants.dart';
@@ -9,17 +10,54 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120,
-      child: AspectRatio(
-        aspectRatio: 2.5 / 4.3,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage(Assets.test)),
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.5 / 4.3,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: const DecorationImage(
+                    fit: BoxFit.fill, image: AssetImage(Assets.test)),
+              ),
+            ),
           ),
-        ),
+          const SizedBox(
+            width: 30,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(
+                  'Harry Potter Of The Goblet Of Fire ',
+                  style: Styles.text20.copyWith(fontFamily: kFontFamily),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              Text(
+                'Peter Elia',
+                style: Styles.text14.copyWith(fontWeight: FontWeight.normal),
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              Row(
+                children: [
+                  Text('19.99 €',
+                      style:
+                          Styles.text20.copyWith(fontWeight: FontWeight.bold))
+                ],
+              )
+            ],
+          )
+        ],
       ),
     );
-    ;
   }
 }
