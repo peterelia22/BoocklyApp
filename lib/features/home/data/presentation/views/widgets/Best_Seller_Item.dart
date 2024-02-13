@@ -1,5 +1,7 @@
 import 'package:bookly/core/styles.dart';
+import 'package:bookly/features/home/data/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../../constants.dart';
 
@@ -25,36 +27,40 @@ class BestSellerItem extends StatelessWidget {
           const SizedBox(
             width: 30,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: Text(
-                  'Harry Potter Of The Goblet Of Fire ',
-                  style: Styles.text20.copyWith(fontFamily: kFontFamily),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: Text(
+                    'Harry Potter Of The Goblet Of Fire ',
+                    style: Styles.text20.copyWith(fontFamily: kFontFamily),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              Text(
-                'Peter Elia',
-                style: Styles.text14.copyWith(fontWeight: FontWeight.normal),
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              Row(
-                children: [
-                  Text('19.99 €',
-                      style:
-                          Styles.text20.copyWith(fontWeight: FontWeight.bold))
-                ],
-              )
-            ],
+                const SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  'Peter Elia',
+                  style: Styles.text14.copyWith(fontWeight: FontWeight.normal),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Text('19.99 €',
+                        style: Styles.text20
+                            .copyWith(fontWeight: FontWeight.bold)),
+                    const Spacer(),
+                    const BookRating()
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
