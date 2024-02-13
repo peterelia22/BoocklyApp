@@ -1,4 +1,3 @@
-import 'package:bookly/constants.dart';
 import 'package:bookly/core/styles.dart';
 import 'package:bookly/features/home/data/presentation/views/widgets/AppBar.dart';
 import 'package:bookly/features/home/data/presentation/views/widgets/Best_Seller_Item.dart';
@@ -22,7 +21,7 @@ class HomeBody extends StatelessWidget {
           padding: EdgeInsets.only(left: 10),
           child: Text(
             'Best  Seller',
-            style: Styles.tittleMedium,
+            style: Styles.text18,
           ),
         ),
         BestSellerItem()
