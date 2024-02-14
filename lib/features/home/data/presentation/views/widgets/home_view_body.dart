@@ -9,28 +9,58 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          ListViewBuilderBooks(),
-          SizedBox(
-            height: 35,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAppBar(),
+              ListViewBuilderBooks(),
+              SizedBox(
+                height: 35,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 30),
+                child: Text(
+                  'Best  Seller',
+                  style: Styles.text18,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              )
+            ],
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Text(
-              'Best  Seller',
-              style: Styles.text18,
-            ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BestSellerListView(),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          BestSellerItem()
-        ],
+        )
+      ],
+    );
+  }
+}
+
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        padding: EdgeInsets.zero,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            child: BestSellerItem(),
+          );
+        },
+        itemCount: 10,
       ),
     );
   }
