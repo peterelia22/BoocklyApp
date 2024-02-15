@@ -1,6 +1,5 @@
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/app_router.dart';
-import 'package:bookly/features/home/data/presentation/views/home_view.dart';
 import 'package:bookly/features/splash/presentation/view/widgets/widgets.dart';
 
 // Corrected import statement
